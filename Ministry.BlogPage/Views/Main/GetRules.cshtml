@@ -1,0 +1,104 @@
+﻿@model List<Ministry.BlogPage.Entities.RuleFiles>
+@{
+    ViewData["Title"] = "GetRules";
+}
+
+<main>
+    <div class="col-md-9 rules">
+        <h4 class="section_header">Qanunvericilik</h4>
+
+        <!-- Qanunvericilik -->
+        <div class="rules_tab">
+            <input class="rules_input" type="checkbox" id="chck1">
+            <label class="rules_label" for="chck1">Qanunvericilik</label>
+            <div class="rules_tabContent">
+                <ul class="rules_list">
+                    @foreach (var rule in Model.Where(i => i.Type == Ministry.BlogPage.Entities.RuleType.Qanunvericilik))
+                    {
+                        <li>
+                            <a href="@rule.Link" target="_blank">
+                               @rule.Title
+                            </a>
+                        </li>
+                    }
+
+
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fərmanlar -->
+        <div class="rules_tab">
+            <input class="rules_input" type="checkbox" id="chck2">
+            <label class="rules_label" for="chck2">Fərmanlar</label>
+            <div class="rules_tabContent">
+                <ul class="rules_list">
+                    @foreach (var rule in Model.Where(i => i.Type == Ministry.BlogPage.Entities.RuleType.Ferman))
+                    {
+                        <li>
+                            <a href="@rule.Link" target="_blank">
+                                @rule.Title
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- Qərarlar -->
+        <div class="rules_tab">
+            <input class="rules_input" type="checkbox" id="chck4">
+            <label class="rules_label" for="chck4">Qərarlar</label>
+            <div class="rules_tabContent">
+                <ul class="rules_list">
+                    @foreach (var rule in Model.Where(i => i.Type == Ministry.BlogPage.Entities.RuleType.Qerarlar))
+                    {
+                        <li>
+                            <a href="@rule.Link" target="_blank">
+                                @rule.Title
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sərəncamlar -->
+        <div class="rules_tab">
+            <input class="rules_input" type="checkbox" id="chck5">
+            <label class="rules_label" for="chck5">Sərəncamlar</label>
+            <div class="rules_tabContent">
+                <ul class="rules_list">
+                    @foreach (var rule in Model.Where(i => i.Type == Ministry.BlogPage.Entities.RuleType.Serencamlar))
+                    {
+                        <li>
+                            <a href="@rule.Link" target="_blank">
+                                @rule.Title
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <!-- Metodiki göstərişlər -->
+        <div class="rules_tab">
+            <input class="rules_input" type="checkbox" id="chck6">
+            <label class="rules_label" for="chck6">Metodiki göstərişlər</label>
+            <div class="rules_tabContent">
+                <ul class="rules_list">
+                    @foreach (var rule in Model.Where(i => i.Type == Ministry.BlogPage.Entities.RuleType.Metodik_Gorushler))
+                    {
+                        <li>
+                            <a href="@rule.Link" target="_blank">
+                                @rule.Title
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</main>
+

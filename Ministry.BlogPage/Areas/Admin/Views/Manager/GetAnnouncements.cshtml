@@ -1,0 +1,67 @@
+﻿@model List<Ministry.BlogPage.Entities.Announcement>
+@{
+    ViewData["Title"] = "GetAnnouncements";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Elanlar</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Blank Page</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="card-body">
+            <a class="btn btn-success mb-3" href="/Admin/Manager/AddAnnouncement">Əlavə Et</a>
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Elan Başlığı</th>
+                        <th>Elan Şəkili</th>
+                        <th>Əməliyyatlar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>
+                                <img style="height:70px" src="~/img/@item.MainUrl" alt="Alternate Text" />
+                            </td>
+                            <td>
+                                <a href="/Admin/Manager/DeleteAnnouncement/@item.Id" class="btn btn-danger">Sil</a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Elan Başlığı</th>
+                        <th>Elan Şəkili</th>
+                        <th>Əməliyyatlar</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+
+    </section>
+    <!-- /.content -->
+</div>
+

@@ -1,0 +1,41 @@
+﻿@model Ministry.BlogPage.Entities.Announcement
+@{
+    ViewData["Title"] = "GetAnnouncementBySlug";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+@using Ministry.BlogPage.Helpers;
+
+<main class="col-md-9 openedData">
+    <section class="openedData_info">
+        <img src="~/img/@Model.MainUrl" alt="news_open" class="openedData_img">
+        <p class="openedData_date">@Model.CreatedDate.ToString("dd MMMM yyyy")</p>
+        <p class="openedData_header">@Model.Title</p>
+        @Html.Raw(Model.Description)
+    <br />
+    <br />
+    </section>
+    <section class="openedData_latestInfo">
+        <p class="openedData_latestInfoTxt"><lang key="Lastest"></lang></p>
+        <ul class="openedData_latestContainer">
+
+            @{
+                List<Ministry.BlogPage.Entities.Announcement> news = ViewBag.LastestPosts as List<Ministry.BlogPage.Entities.Announcement>;
+            }
+            <!-- #1 -->
+            @foreach (var item in news)
+            {
+                <li>
+                    <img src="~/img/@item.MainUrl" alt="img1-5">
+                    <div class="openedData_contentContainer">
+                        <p class="openedData_latestDate">@item.CreatedDate.ToString("dd MMMM yyyy")</p>
+                        <a href="/@Html.CurrentLanguage()/MEDA/Medialar/@item.Slug/@item.Id" class="openedData_latestDescription">@item.Title</a>
+                    </div>
+                </li>
+            }
+
+
+        </ul>
+    </section>
+</main>
+

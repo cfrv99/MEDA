@@ -1,0 +1,75 @@
+﻿@model List<Ministry.BlogPage.Entities.News> 
+@{
+    ViewData["Title"] = "GetNewPage";
+}
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Xəbərlər</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Blank Page</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="card-body">
+            <a class="btn btn-success mb-3" href="/Admin/Manager/AddNews">Əlavə Et</a>
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Xəbər Başlığı</th>
+                        <th>Xəbər Şəkili</th>
+                        <th>Xəbərin Link Başlığı</th>
+                        <th>Əməliyyatlar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Title</td>
+                            <td>
+                                <img style="height:70px" src="~/img/@item.MainImageUrl" alt="Alternate Text" />
+                            </td>
+                            <td>@item.Slug</td>
+                            <td>
+                                <a href="/Admin/Manager/EditNews/@item.Id" class="btn btn-info">Dəyiş</a>
+                                <a href="/Admin/Manager/DeleteNewsFromBase/@item.Id" class="btn btn-danger">Sil</a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>Xəbər Başlığı</th>
+                        <th>Xəbər Şəkili</th>
+                        <th>Xəbərin Link Başlığı</th>
+                        <th>Əməliyyatlar</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+
+    </section>
+    <!-- /.content -->
+</div>
+

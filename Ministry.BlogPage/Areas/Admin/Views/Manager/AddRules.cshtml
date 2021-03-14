@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "AddRules";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="content-wrapper">
+    <section class="content">
+        <div class="card-body">
+            <form action="/Admin/Manager/AddRules" method="post">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Link</label>
+                    <input name="link" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Link">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Bashliq</label>
+                    <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Bashliq">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Link Tipi</label>
+                    <select name="type" class="form-control" id="exampleFormControlSelect1">
+                        <option value="0">Fermanlar</option>
+                        <option value="1">Qanunvercilik</option>
+                        <option value="2">Qerarlar</option>
+                        <option value="3">Serencamlar</option>
+                        <option value="4">Metodik Gorushler</option>
+                    </select>
+                </div>
+                <button type="submit">Elave Et</button>
+            </form>
+
+        </div>
+    </section>
+</div>

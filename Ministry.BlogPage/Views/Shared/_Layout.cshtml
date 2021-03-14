@@ -1,0 +1,150 @@
+﻿@using Ministry.BlogPage.Helpers;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dövlət Mineral Xammal Ehtiyatlarından İstifadə Agentliyi</title>
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/dist/css/app.min.css">
+
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="headerLine">
+            <div class="col-md-9 headerLine_content">
+                <i class="fas fa-map-marker-alt headerLine_icon"></i>
+                <p class="headerLine_adress">Nizami küç, Nizami mall, 8-ci mərtəbə</p>
+                <i class="far fa-envelope headerLine_icon"></i>
+                <p>mineralxammal@gmail.com</p>
+            </div>
+        </div>
+        <div class="header">
+            <div class="col-md-9 header_contentContainer">
+                <a href="" class="header_medaLogo">
+                    <img src="/dist/img/Meda_logo.png" alt="Meda_logo">
+                </a>
+                <div class="header_contactContainer">
+                    <img src="/dist/img/contact.png" alt="contact">
+                    <p class="header_contactNum">168 QAYNAR XƏTT</p>
+                    <img src="/dist/img/E_radar.png" alt="E-RADAR">
+                    <p class="header_contactNum">E-RADAR</p>
+                </div>
+                <form asp-action="ChangeLanguage" asp-controller="Localization" method="get">
+                    <select onchange="langSelect()" name="language" id="language" class="header_language">
+                        <option selected=@(Html.CurrentLanguage()=="az")  value="az">AZ</option>
+                        <option selected=@(Html.CurrentLanguage()=="en") value="en">EN</option>
+                    </select>
+                    <input type="submit" hidden id="submitLangForm" />
+                </form>
+                <a href="http://eco.gov.az/">
+                    <img src="/dist/img/Etsn_logo.png" alt="Etsn_logo" target="_blank">
+                </a>
+            </div>
+            <nav class="col-md-9 navbarContainer">
+                <ul class="navbarContainer_navbar">
+                    <li class="navbarContainer_btn"><a href="/" class="navbarBtn_active"><lang key="MainPage"></lang></a></li>
+                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Haqqimizda"><lang key="About"></lang></a></li>
+                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/FeliyyetSahesi"><lang key="Services"></lang></a></li>
+                    @*<li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Layihelerimiz"><lang key="Projects"></lang></a></li>*@
+                    <li class="navbarContainer_btn navbarBtn_down">
+                        <a href="">Media</a>
+                        <ul style="width:150px" class="navbarContainer_dropdown">
+                            <li><a href="/@Html.CurrentLanguage()/MEDA/Media/Xeberler"><lang key="News"></lang></a></li>
+                            <li><a href="/@Html.CurrentLanguage()/MEDA/Media/Bloglar"><lang key="Announcements"></lang></a></li>
+                        </ul>
+                    </li>
+                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Qanunvericilik"><lang key="Rules"></lang></a></li>
+                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Elage"><lang key="Contact"></lang></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    @RenderBody()
+
+
+    <!-- FOOTER -->
+    <footer class="footerContainer">
+        <div class="col-md-9 footer">
+
+            <!-- LOGO CONATINER -->
+            <div class="footer_logoContainer">
+                <a href="#">
+                    <img src="/dist/img/Meda_logo.png" alt="Meda_logo" class="footer_logo">
+                </a>
+                <p class="footer_description">
+                    Various versions have evolved over
+                    the years, sometimes by accident,
+                    sometimes on purpose
+                </p>
+            </div>
+
+            <!-- FOOTER MENU -->
+            <div class="footer_navbarContainer">
+                <p class="footer_header">Menu</p>
+                <ul class="footer_navbar">
+                    <li><a href="#">Ana səhifə</a></li>
+                    <li><a href="/MEDA/Haqqimizda">Haqqımızda</a></li>
+                    <li><a href="./html/services.html">Fəaliyyət </a></li>
+                    <li><a href="./html/project.html">Layihələr</a></li>
+                    <li class="footer_rightMargin"><a href="./html/news.html">Media</a></li>
+                    <li class="footer_rightMargin"><a href="./html/rules.html">Qanunvericilik</a></li>
+                    <li class="footer_rightMargin"><a href="./html/contact_us.html">Əlaqə</a></li>
+                </ul>
+            </div>
+
+
+            <!-- FOOTER CONTACT-->
+            <div>
+                <p class="footer_header">Contact us</p>
+                <ul class="footer_contactContainer">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003" target="_blank" class="footer_contact">Nizami küç, Nizami mall, 8-ci mərtəbə</a>
+                    </li>
+                    <li>
+                        <i class="far fa-envelope"></i>
+                        <a href="" class="footer_contact">mineralxammal@gmail.com</a>
+                    </li>
+                </ul>
+                <div>
+                    <a href="https://www.facebook.com">
+                        <i class="fab fa-facebook footer_icon"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/">
+                        <i class="fab fa-linkedin footer_icon"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="~dist/js/app.min.js"></script>
+
+    <script>
+        langSelect = () => {
+            document.getElementById("submitLangForm").click();
+        }
+    </script>
+</body>
+</html>
