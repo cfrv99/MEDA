@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;
@@ -32,6 +33,8 @@ namespace Ministry.BlogPage
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMemoryCache();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddSingleton<ILocalizationService, LocalizationService>();
             services.AddControllersWithViews();
@@ -52,7 +55,7 @@ namespace Ministry.BlogPage
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

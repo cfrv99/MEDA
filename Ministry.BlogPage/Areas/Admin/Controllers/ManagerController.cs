@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Ministry.BlogPage.EfCore;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace Ministry.BlogPage.Areas.Admin.Controllers
 {
+    [Authorize]
     [Area("Admin")]
     public class ManagerController : Controller
     {
