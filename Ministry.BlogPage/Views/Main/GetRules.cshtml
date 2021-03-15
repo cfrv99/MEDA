@@ -82,23 +82,6 @@
             </div>
         </div>
 
-        <!-- Metodiki göstərişlər -->
-        <div class="rules_tab">
-            <input class="rules_input" type="checkbox" id="chck6">
-            <label class="rules_label" for="chck6">Metodiki göstərişlər</label>
-            <div class="rules_tabContent">
-                <ul class="rules_list">
-                    @foreach (var rule in Model.Where(i => i.Type == Ministry.BlogPage.Entities.RuleType.Metodik_Gorushler))
-                    {
-                        <li>
-                            <a href="@rule.Link" target="_blank">
-                                @rule.Title
-                            </a>
-                        </li>
-                    }
-                </ul>
-            </div>
-        </div>
 
     </div>
 </main>
