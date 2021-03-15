@@ -1,5 +1,5 @@
 .aboutUs {
-    background-image: url(../img/section_background.png);
+    background-image: url(/dist/img/section_background.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 5%
@@ -62,7 +62,7 @@
 
 .activity {
     padding: 7% 10% 10% 0;
-    background-image: url(../img/Background/activity_back.png);
+    background-image: url(/dist/img/Background/activity_back.png);
     background-repeat: no-repeat;
     background-size: cover
 }
@@ -573,7 +573,7 @@ ul {
         .geological_content li::after {
             content: '';
             padding: 1%;
-            background-image: url(../../../img/collaboration/dot.svg);
+            background-image: url(/dist/img/collaboration/dot.svg);
             background-repeat: no-repeat;
             background-size: 100%;
             display: block;
@@ -591,7 +591,7 @@ ul {
     }
 
         .geological_content:nth-child(2) li::after {
-            background-image: url(../../img/Monitorinq/list_icon.svg)
+            background-image: url(/dist/img/Monitorinq/list_icon.svg)
         }
 
 .geological_principle li, .geological_ps {
@@ -1077,7 +1077,7 @@ ul {
             .monitoring_contentContainer ul li::after, .monitoring_contentContainer_reverse ul li::after {
                 content: '';
                 padding: 1%;
-                background-image: url(../../img/Monitorinq/list_icon.svg);
+                background-image: url(/dist/img/Monitorinq/list_icon.svg);
                 background-repeat: no-repeat;
                 background-size: 100%;
                 display: block;
@@ -1497,7 +1497,7 @@ ul {
 }
 
 .structure {
-    background-image: url(../img/section_background.png)
+    background-image: url(/dist/img/section_background.png)
 }
 
 .structure_backImg {
@@ -1642,7 +1642,7 @@ ul {
             z-index: 1;
             padding: 7%;
             content: "";
-            background-image: url(../../../img/about_agency/dot.svg);
+            background-image: url(/dist/img/about_agency/dot.svg);
             background-repeat: no-repeat;
             background-size: 100%
         }
@@ -1667,7 +1667,7 @@ ul {
 @charset "UTF-8";
 
 .administration {
-    background-image: url(../img/section_background.png)
+    background-image: url(/dist/img/section_background.png)
 }
 
 .administration_cards {
@@ -1706,7 +1706,7 @@ ul {
 }
 
     .administration_input:checked ~ .administration_content {
-        max-height: 100vh;
+        max-height: 1500px;
         padding: 1em
     }
 
@@ -1794,7 +1794,7 @@ ul {
             left: -4%;
             bottom: 23%;
             padding: 1%;
-            background-image: url(../../../img/collaboration/dot.svg);
+            background-image: url(/dist/img/collaboration/dot.svg);
             background-repeat: no-repeat;
             background-size: 100%
         }
