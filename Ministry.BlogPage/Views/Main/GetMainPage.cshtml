@@ -175,7 +175,7 @@
                         <img src="/img/@item.MainImageUrl" alt="news_1" class="newsContainer_newsImg">
                         <p class="newsContainer_date">@item.CreatedDate.ToString("dd MMMM yyyy")</p>
                         <h5 class="newsContainer_header">@item.Title</h5>
-                        <p class="newsContainer_description">@item.ShortDescription.Substring(0, 60) ...</p>
+                        <p style="word-wrap:break-word" class="newsContainer_description">@item.ShortDescription.Substring(0, 60) ...</p>
 
                         <div class="newsContainer_moreContainer">
                             <img src="/dist/img/read_m_icon.png" alt="read_m_icon" class="newsContainer_readIcon">

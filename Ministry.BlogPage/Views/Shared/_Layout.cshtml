@@ -36,7 +36,7 @@
         </div>
         <div class="header">
             <div class="col-md-9 header_contentContainer">
-                <a href="" class="header_medaLogo">
+                <a href="/" class="header_medaLogo">
                     <img src="/dist/img/Meda_logo.png" alt="Meda_logo">
                 </a>
                 <div class="header_contactContainer">
@@ -61,21 +61,24 @@
                     <img src="/dist/img/Etsn_logo.png" alt="Etsn_logo" target="_blank">
                 </a>
             </div>
+            @{
+                var actionName = @ViewContext.RouteData.Values["action"].ToString().ToLower();
+            }
             <nav class="col-md-9 navbarContainer">
                 <ul class="navbarContainer_navbar">
-                    <li class="navbarContainer_btn"><a href="/" class="navbarBtn_active"><lang key="MainPage"></lang></a></li>
-                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Haqqimizda"><lang key="About"></lang></a></li>
-                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/FeliyyetSahesi"><lang key="Services"></lang></a></li>
-                    @*<li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Layihelerimiz"><lang key="Projects"></lang></a></li>*@
+                    <li class="navbarContainer_btn"><a href="/" class="@(actionName=="getmainpage" ? "navbarBtn_active" : "")"><lang key="MainPage"></lang></a></li>
+                    <li class="navbarContainer_btn"><a class="@(actionName=="getaboutpage" ? "navbarBtn_active" : "")" href="/@Html.CurrentLanguage()/MEDA/Haqqimizda"><lang key="About"></lang></a></li>
+                    <li class="navbarContainer_btn"><a class="@(actionName=="getworkdirections" ? "navbarBtn_active" : "")" href="/@Html.CurrentLanguage()/MEDA/FeliyyetSahesi"><lang key="Services"></lang></a></li>
+                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Layihelerimiz"><lang key="Projects"></lang></a></li>
                     <li class="navbarContainer_btn navbarBtn_down">
-                        <a href="">Media</a>
+                        <a class="@(actionName=="getmediasnews" || actionName=="getmediablogs" ? "navbarBtn_active" : "")" href="">Media</a>
                         <ul style="width:150px" class="navbarContainer_dropdown">
-                            <li><a href="/@Html.CurrentLanguage()/MEDA/Media/Xeberler"><lang key="News"></lang></a></li>
-                            <li><a href="/@Html.CurrentLanguage()/MEDA/Media/Bloglar"><lang key="Announcements"></lang></a></li>
+                            <li><a class="@(actionName=="getmediasnews" ? "navbarBtn_active" : "")" href="/@Html.CurrentLanguage()/MEDA/Media/Xeberler"><lang key="News"></lang></a></li>
+                            <li><a class="@(actionName=="getmediablogs" ? "navbarBtn_active" : "")" href="/@Html.CurrentLanguage()/MEDA/Media/Bloglar"><lang key="Announcements"></lang></a></li>
                         </ul>
                     </li>
-                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Qanunvericilik"><lang key="Rules"></lang></a></li>
-                    <li class="navbarContainer_btn"><a href="/@Html.CurrentLanguage()/MEDA/Elage"><lang key="Contact"></lang></a></li>
+                    <li class="navbarContainer_btn"><a class="@(actionName=="getrules" ? "navbarBtn_active" : "")" href="/@Html.CurrentLanguage()/MEDA/Qanunvericilik"><lang key="Rules"></lang></a></li>
+                    <li class="navbarContainer_btn"><a class="@(actionName=="getcontacts" ? "navbarBtn_active" : "")" href="/@Html.CurrentLanguage()/MEDA/Elage"><lang key="Contact"></lang></a></li>
                 </ul>
             </nav>
         </div>
@@ -92,7 +95,7 @@
 
             <!-- LOGO CONATINER -->
             <div class="footer_logoContainer">
-                <a href="../index.html">
+                <a href="/">
                     <img src="/dist/img/Meda_logo.png" alt="Meda_logo" class="footer_logo">
                 </a>
                 <p class="footer_description">

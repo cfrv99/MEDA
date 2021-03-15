@@ -1,5 +1,5 @@
 .aboutUs {
-    background-image: url(/dist/img/section_background.png);
+    background-image: url(../img/section_background.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 5%
@@ -62,7 +62,7 @@
 
 .activity {
     padding: 7% 10% 10% 0;
-    background-image: url(/dist/img/Background/activity_back.png);
+    background-image: url(../img/Background/activity_back.png);
     background-repeat: no-repeat;
     background-size: cover
 }
@@ -227,6 +227,41 @@
         margin-right: 10%
     }
 
+.description {
+    display: flex;
+    justify-content: center
+}
+
+.description_container {
+    width: 68%;
+    margin-top: -3%;
+    margin-bottom: 2%;
+    padding: 3%;
+    position: relative;
+    z-index: inherit;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,.09)
+}
+
+    .description_container::after {
+        content: '';
+        width: 103%;
+        position: absolute;
+        bottom: -3%;
+        left: -1.5%;
+        z-index: -1;
+        padding: 5%;
+        background-color: #283d79
+    }
+
+.description_content {
+    color: #676767;
+    font-size: 1.04vw;
+    font-family: 'Poppins',sans-serif;
+    line-height: 170%
+}
+
 .contactMap {
     width: 100%;
     height: auto
@@ -348,41 +383,6 @@
         color: #1a2955
     }
 
-.description {
-    display: flex;
-    justify-content: center
-}
-
-.description_container {
-    width: 68%;
-    margin-top: -3%;
-    margin-bottom: 2%;
-    padding: 3%;
-    position: relative;
-    z-index: inherit;
-    border-radius: 4px;
-    background-color: #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,.09)
-}
-
-    .description_container::after {
-        content: '';
-        width: 103%;
-        position: absolute;
-        bottom: -3%;
-        left: -1.5%;
-        z-index: -1;
-        padding: 5%;
-        background-color: #283d79
-    }
-
-.description_content {
-    color: #676767;
-    font-size: 1.04vw;
-    font-family: 'Poppins',sans-serif;
-    line-height: 170%
-}
-
 .footerContainer {
     background-color: #fff
 }
@@ -467,130 +467,6 @@
         color: #00f !important
     }
 
-.geological .description_container {
-    width: 95%;
-    margin-top: -12%;
-    margin-bottom: 10%
-}
-
-.geological .aboutUs_statisticHeader {
-    margin-bottom: 5%
-}
-
-.geological_contentCard {
-    margin-bottom: 5%;
-    display: flex;
-    align-items: center
-}
-
-.geological_contentImg {
-    width: 35%
-}
-
-.geological_content {
-    padding: 2% 2% 2% 6%;
-    color: #fff;
-    font-size: .88vw;
-    font-family: 'Poppins',sans-serif;
-    line-height: 170%;
-    background-color: #ff912c;
-    position: relative;
-    left: 10%
-}
-
-    .geological_content li {
-        margin-bottom: 3%;
-        position: relative
-    }
-
-        .geological_content li:last-child {
-            margin-bottom: 0
-        }
-
-        .geological_content li::after {
-            content: '';
-            padding: 1%;
-            background-image: url(/dist/img/collaboration/dot.svg);
-            background-repeat: no-repeat;
-            background-size: 100%;
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: -5%;
-            transform: translateY(-50%)
-        }
-
-    .geological_content:nth-child(2) {
-        color: #283d79;
-        left: -10%;
-        background-color: #fff;
-        box-shadow: 0 4px 15px rgba(0,0,0,.1)
-    }
-
-        .geological_content:nth-child(2) li::after {
-            background-image: url(/dist/img/Monitorinq/list_icon.svg)
-        }
-
-.geological_principle li, .geological_ps {
-    background-color: #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,.1)
-}
-
-.geological_ps {
-    margin: 5% auto !important;
-    padding: 2% 3%;
-    color: #283d79;
-    font-size: .88vw;
-    font-weight: 500
-}
-
-    .geological_ps span {
-        color: #ff4b4b
-    }
-
-.geological_principleSec {
-    margin-bottom: 10%;
-    position: relative
-}
-
-.geological_principleImg {
-    width: 100%;
-    height: auto
-}
-
-.geological_principleContainer {
-    position: absolute;
-    top: 30%;
-    right: 0;
-    left: 0
-}
-
-.geological_principle {
-    display: flex;
-    justify-content: space-between
-}
-
-    .geological_principle li {
-        width: 23%;
-        padding: 3% 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center
-    }
-
-        .geological_principle li img {
-            width: 11%;
-            margin-bottom: 5%
-        }
-
-        .geological_principle li p {
-            width: 75%;
-            text-align: center;
-            color: #283d79;
-            font-size: .8vw;
-            font-family: 'Poppins',sans-serif
-        }
-
 * {
     margin: 0;
     padding: 0;
@@ -653,6 +529,130 @@ ul {
     display: flex;
     justify-content: center
 }
+
+.geological .description_container {
+    width: 95%;
+    margin-top: -12%;
+    margin-bottom: 10%
+}
+
+.geological .aboutUs_statisticHeader {
+    margin-bottom: 5%
+}
+
+.geological_contentCard {
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center
+}
+
+.geological_contentImg {
+    width: 35%
+}
+
+.geological_content {
+    padding: 2% 2% 2% 6%;
+    color: #fff;
+    font-size: .88vw;
+    font-family: 'Poppins',sans-serif;
+    line-height: 170%;
+    background-color: #ff912c;
+    position: relative;
+    left: 10%
+}
+
+    .geological_content li {
+        margin-bottom: 3%;
+        position: relative
+    }
+
+        .geological_content li:last-child {
+            margin-bottom: 0
+        }
+
+        .geological_content li::after {
+            content: '';
+            padding: 1%;
+            background-image: url(../../../img/collaboration/dot.svg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            transform: translateY(-50%)
+        }
+
+    .geological_content:nth-child(2) {
+        color: #283d79;
+        left: -10%;
+        background-color: #fff;
+        box-shadow: 0 4px 15px rgba(0,0,0,.1)
+    }
+
+        .geological_content:nth-child(2) li::after {
+            background-image: url(../../img/Monitorinq/list_icon.svg)
+        }
+
+.geological_principle li, .geological_ps {
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1)
+}
+
+.geological_ps {
+    margin: 5% auto !important;
+    padding: 2% 3%;
+    color: #283d79;
+    font-size: .88vw;
+    font-weight: 500
+}
+
+    .geological_ps span {
+        color: #ff4b4b
+    }
+
+.geological_principleSec {
+    margin-bottom: 10%;
+    position: relative
+}
+
+.geological_principleImg {
+    width: 100%;
+    height: auto
+}
+
+.geological_principleContainer {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    left: 0
+}
+
+.geological_principle {
+    display: flex;
+    justify-content: space-between
+}
+
+    .geological_principle li {
+        width: 23%;
+        padding: 3% 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+        .geological_principle li img {
+            width: 11%;
+            margin-bottom: 5%
+        }
+
+        .geological_principle li p {
+            width: 75%;
+            text-align: center;
+            color: #283d79;
+            font-size: .8vw;
+            font-family: 'Poppins',sans-serif
+        }
 
 .geologicalUse .card_typeContainer {
     justify-content: space-evenly
@@ -1077,7 +1077,7 @@ ul {
             .monitoring_contentContainer ul li::after, .monitoring_contentContainer_reverse ul li::after {
                 content: '';
                 padding: 1%;
-                background-image: url(/dist/img/Monitorinq/list_icon.svg);
+                background-image: url(../../img/Monitorinq/list_icon.svg);
                 background-repeat: no-repeat;
                 background-size: 100%;
                 display: block;
@@ -1183,7 +1183,6 @@ ul {
 }
 
 .openedData_header {
-    margin-bottom: 2%;
     color: #1a2955;
     font-size: 1.64vw
 }
@@ -1248,6 +1247,47 @@ ul {
     cursor: pointer
 }
 
+.openedProject_img {
+    width: 100%
+}
+
+.openedProject_container {
+    display: flex;
+    justify-content: flex-end
+}
+
+.openedProject_dateContainer {
+    width: 25%;
+    margin: -5% 10% 0 0;
+    padding: 2% 3%;
+    color: #fff;
+    font-size: .9vw;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: #ff912c
+}
+
+.openedProject_bottom {
+    margin-bottom: 10%
+}
+
+.openedProject_header {
+    margin: 5% 0 2%;
+    text-transform: uppercase;
+    color: #ff912c;
+    font-size: 1.4vw;
+    font-weight: 500
+}
+
+    .openedProject_header:nth-child(3) {
+        color: #1a2955
+    }
+
+.openedProject_content {
+    color: #676767;
+    font-size: 1vw
+}
+
 .projects_container {
     display: flex;
     flex-wrap: wrap;
@@ -1290,47 +1330,6 @@ ul {
 
 .projects_description {
     font-size: 1.05vw
-}
-
-.openedProject_img {
-    width: 100%
-}
-
-.openedProject_container {
-    display: flex;
-    justify-content: flex-end
-}
-
-.openedProject_dateContainer {
-    width: 25%;
-    margin: -5% 10% 0 0;
-    padding: 2% 3%;
-    color: #fff;
-    font-size: .9vw;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    background-color: #ff912c
-}
-
-.openedProject_bottom {
-    margin-bottom: 10%
-}
-
-.openedProject_header {
-    margin: 5% 0 2%;
-    text-transform: uppercase;
-    color: #ff912c;
-    font-size: 1.4vw;
-    font-weight: 500
-}
-
-    .openedProject_header:nth-child(3) {
-        color: #1a2955
-    }
-
-.openedProject_content {
-    color: #676767;
-    font-size: 1vw
 }
 
 @charset "UTF-8";
@@ -1498,7 +1497,7 @@ ul {
 }
 
 .structure {
-    background-image: url(/dist/img/section_background.png)
+    background-image: url(../img/section_background.png)
 }
 
 .structure_backImg {
@@ -1643,7 +1642,7 @@ ul {
             z-index: 1;
             padding: 7%;
             content: "";
-            background-image: url(/dist/img/about_agency/dot.svg);
+            background-image: url(../../../img/about_agency/dot.svg);
             background-repeat: no-repeat;
             background-size: 100%
         }
@@ -1668,7 +1667,7 @@ ul {
 @charset "UTF-8";
 
 .administration {
-    background-image: url(/dist/img/section_background.png)
+    background-image: url(../img/section_background.png)
 }
 
 .administration_cards {
@@ -1795,7 +1794,7 @@ ul {
             left: -4%;
             bottom: 23%;
             padding: 1%;
-            background-image: url(/dist/img/collaboration/dot.svg);
+            background-image: url(../../../img/collaboration/dot.svg);
             background-repeat: no-repeat;
             background-size: 100%
         }
