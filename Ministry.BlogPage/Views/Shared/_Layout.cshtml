@@ -27,9 +27,11 @@
         <div class="headerLine">
             <div class="col-md-9 headerLine_content">
                 <i class="fas fa-map-marker-alt headerLine_icon"></i>
-                <p class="headerLine_adress">Nizami küç, Nizami mall, 8-ci mərtəbə</p>
+                <a href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003" class="headerLine_adress">
+                    İstiqlaliyyət küç, 31
+                </a>
                 <i class="far fa-envelope headerLine_icon"></i>
-                <p>mineralxammal@gmail.com</p>
+                <a href="mailto:info@meda.gov.az">info@meda.gov.az</a>
             </div>
         </div>
         <div class="header">
@@ -38,14 +40,19 @@
                     <img src="/dist/img/Meda_logo.png" alt="Meda_logo">
                 </a>
                 <div class="header_contactContainer">
-                    <img src="/dist/img/contact.png" alt="contact">
-                    <p class="header_contactNum">168 QAYNAR XƏTT</p>
-                    <img src="/dist/img/E_radar.png" alt="E-RADAR">
-                    <p class="header_contactNum">E-RADAR</p>
+                    <a href="tel:+012186">
+                        <img src="/dist/img/contact.svg" alt="contact">
+                        <span class="header_contactNum">168 QAYNAR XƏTT</span>
+                    </a>
+
+                    <a href="http://eco.gov.az/az/eko-radar" target="_blank">
+                        <img src="/dist/img/E_radar.svg" alt="E-RADAR">
+                        <span class="header_contactNum">E-RADAR</span>
+                    </a>
                 </div>
                 <form asp-action="ChangeLanguage" asp-controller="Localization" method="get">
                     <select onchange="langSelect()" name="language" id="language" class="header_language">
-                        <option selected=@(Html.CurrentLanguage()=="az")  value="az">AZ</option>
+                        <option selected=@(Html.CurrentLanguage()=="az") value="az">AZ</option>
                         <option selected=@(Html.CurrentLanguage()=="en") value="en">EN</option>
                     </select>
                     <input type="submit" hidden id="submitLangForm" />
@@ -79,12 +86,13 @@
 
 
     <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer class="footerContainer">
         <div class="col-md-9 footer">
 
             <!-- LOGO CONATINER -->
             <div class="footer_logoContainer">
-                <a href="#">
+                <a href="../index.html">
                     <img src="/dist/img/Meda_logo.png" alt="Meda_logo" class="footer_logo">
                 </a>
                 <p class="footer_description">
@@ -98,16 +106,14 @@
             <div class="footer_navbarContainer">
                 <p class="footer_header">Menu</p>
                 <ul class="footer_navbar">
-                    <li><a href="#">Ana səhifə</a></li>
-                    <li><a href="/MEDA/Haqqimizda">Haqqımızda</a></li>
-                    <li><a href="./html/services.html">Fəaliyyət </a></li>
-                    <li><a href="./html/project.html">Layihələr</a></li>
-                    <li class="footer_rightMargin"><a href="./html/news.html">Media</a></li>
-                    <li class="footer_rightMargin"><a href="./html/rules.html">Qanunvericilik</a></li>
-                    <li class="footer_rightMargin"><a href="./html/contact_us.html">Əlaqə</a></li>
+                    <li><a href="/">Ana səhifə</a></li>
+                    <li><a href="/@Html.CurrentLanguage()/MEDA/Haqqimizda">Haqqımızda</a></li>
+                    <li><a href="/@Html.CurrentLanguage()/MEDA/FeliyyetSahesi">Fəaliyyət </a></li>
+                    <li class="footer_rightMargin"><a href="/@Html.CurrentLanguage()/MEDA/Media/Xeberler">Xəbərlər</a></li>
+                    <li class="footer_rightMargin"><a href="/@Html.CurrentLanguage()/MEDA/Qanunvericilik">Qanunvericilik</a></li>
+                    <li class="footer_rightMargin"><a href="/@Html.CurrentLanguage()/MEDA/Elage">Əlaqə</a></li>
                 </ul>
             </div>
-
 
             <!-- FOOTER CONTACT-->
             <div>
@@ -115,11 +121,11 @@
                 <ul class="footer_contactContainer">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <a href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003" target="_blank" class="footer_contact">Nizami küç, Nizami mall, 8-ci mərtəbə</a>
+                        <a href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003" target="_blank" class="footer_contact">İstiqlaliyyət küç, 31</a>
                     </li>
                     <li>
                         <i class="far fa-envelope"></i>
-                        <a href="" class="footer_contact">mineralxammal@gmail.com</a>
+                        <a href="mailto:info@meda.gov.az" class="footer_contact">info@meda.gov.az</a>
                     </li>
                 </ul>
                 <div>
@@ -131,10 +137,8 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </footer>
-
     <!-- SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

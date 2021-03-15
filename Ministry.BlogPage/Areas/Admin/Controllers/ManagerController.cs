@@ -41,9 +41,9 @@ namespace Ministry.BlogPage.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> AddNews(string editordata,string title,IFormFile file,string shortDesc)
         {
-            if (shortDesc.Length < 50)
+            if (shortDesc.Length < 101)
             {
-                ViewBag.Error = "Simvol sayi en az 50 olmalidir";
+                ViewBag.Error = "Simvol sayi en az 100 olmalidir";
                 return View();
             }
             var news = new News
@@ -82,9 +82,9 @@ namespace Ministry.BlogPage.Areas.Admin.Controllers
         public async Task<IActionResult> EditNews(string editordata, string title, IFormFile file, string shortDesc,int id)
         {
             var data = await context.News.FirstOrDefaultAsync(i => i.Id == id);
-            if (shortDesc.Length < 50)
+            if (shortDesc.Length < 100)
             {
-                ViewBag.Error = "Simvol sayi en az 50 olmalidir";
+                ViewBag.Error = "Simvol sayi en az 100 olmalidir";
                 return View();
             }
             data.Title = title;
@@ -138,19 +138,13 @@ namespace Ministry.BlogPage.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddAnnouncement(string editordata, string title, IFormFile file, string shortDesc)
+        public async Task<IActionResult> AddAnnouncement(string editordata, string title, IFormFile file)
         {
-            if (shortDesc.Length < 50)
-            {
-                ViewBag.Error = "Simvol sayi en az 50 olmalidir";
-                return View();
-            }
             var announcement = new Announcement
             {
                 Title = title,
                 Description = editordata,
                 Slug = FriendlyUrlHelper.GetFriendlyTitle(title),
-                ShortDescription = shortDesc,
                 CreatedDate = DateTime.Now
             };
             if (file == null)

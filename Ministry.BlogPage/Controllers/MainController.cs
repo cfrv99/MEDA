@@ -20,7 +20,7 @@ namespace Ministry.BlogPage.Controllers
         [HttpGet("")]
         public async Task<IActionResult> GetMainPage()
         {
-            var data = context.News.OrderByDescending(i=>i.CreatedDate).Take(12).ToList();
+            var data = context.News.OrderByDescending(i=>i.CreatedDate).Take(6).ToList();
             return View(data);
         }
 
