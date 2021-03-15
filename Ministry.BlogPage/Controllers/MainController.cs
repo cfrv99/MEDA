@@ -128,6 +128,12 @@ namespace Ministry.BlogPage.Controllers
         {
             return View();
         }
+
+        [HttpGet("{lang}/MEDA/Layiheler/Reqemsal-Layihe")]
+        public IActionResult GetStaticProject()
+        {
+            return View();
+        }
     }
 
     public class LinkModel
